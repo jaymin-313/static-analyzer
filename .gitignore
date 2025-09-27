@@ -1,0 +1,15 @@
+# Build directories
+/build/
+/out/
+/cmake-build-*/
+
+# IDE files
+*.swp
+*.swo
+*.user
+*.vcxproj
+*.sln
+
+# OS-specific
+.DS_Store
+Thumbs.db
