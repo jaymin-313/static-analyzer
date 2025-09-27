@@ -4,6 +4,8 @@
 #include "checks/NamingConventionCheck.h"
 #include "checks/MagicNumberCheck.h"
 #include "checks/LongFunctionCheck.h"
+#include "checks/IncludeGuardCheck.h"
+#include "checks/FunctionParameterCountCheck.h"
 
 int main(int argc, char **argv)
 {
@@ -16,6 +18,8 @@ int main(int argc, char **argv)
     analyzer.addCheck(std::make_unique<checks::NamingConventionCheck>());
     analyzer.addCheck(std::make_unique<checks::MagicNumberCheck>());
     analyzer.addCheck(std::make_unique<checks::LongFunctionCheck>(10)); // set max 10 lines for demo
+    analyzer.addCheck(std::make_unique<checks::IncludeGuardCheck>());
+    analyzer.addCheck(std::make_unique<checks::FunctionParameterCountCheck>(5));
 
     try
     {

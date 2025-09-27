@@ -1,6 +1,7 @@
+// File: test_input.cpp
 #include <iostream>
 
-#pragma once // Remove this later to test IncludeGuardCheck
+// Missing include guard for testing IncludeGuardCheck
 
 class my_class
 { // NamingConventionCheck error: class not PascalCase
@@ -12,6 +13,12 @@ public:
         // TODO: remove temporary code
     }
 };
+
+// Function with too many parameters (FunctionParameterCountCheck)
+void tooManyParams(int a, int b, int c, int d, int e, int f)
+{
+    int x = 1; // MagicNumberCheck
+}
 
 void longFunctionExample()
 { // LongFunctionCheck
@@ -42,5 +49,6 @@ int main()
     my_class c;
     c.DoWork();
     longFunctionExample();
+    tooManyParams(1, 2, 3, 4, 5, 6);
     return 1; // MagicNumberCheck
 }

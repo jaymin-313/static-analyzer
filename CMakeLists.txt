@@ -14,6 +14,8 @@ add_executable(static-analyzer
     src/checks/NamingConventionCheck.cpp
     src/checks/MagicNumberCheck.cpp
     src/checks/LongFunctionCheck.cpp
+    src/checks/IncludeGuardCheck.cpp
+    src/checks/FunctionParameterCountCheck.cpp
 )
 
 
