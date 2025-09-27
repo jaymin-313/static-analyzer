@@ -16,6 +16,7 @@ add_executable(static-analyzer
     src/checks/LongFunctionCheck.cpp
     src/checks/IncludeGuardCheck.cpp
     src/checks/FunctionParameterCountCheck.cpp
+    src/checks/ConstCorrectnessCheck.cpp
 )
 
 

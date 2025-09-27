@@ -6,6 +6,7 @@
 #include "checks/LongFunctionCheck.h"
 #include "checks/IncludeGuardCheck.h"
 #include "checks/FunctionParameterCountCheck.h"
+#include "checks/ConstCorrectnessCheck.h"
 
 int main(int argc, char **argv)
 {
@@ -20,6 +21,7 @@ int main(int argc, char **argv)
     analyzer.addCheck(std::make_unique<checks::LongFunctionCheck>(10)); // set max 10 lines for demo
     analyzer.addCheck(std::make_unique<checks::IncludeGuardCheck>());
     analyzer.addCheck(std::make_unique<checks::FunctionParameterCountCheck>(5));
+    analyzer.addCheck(std::make_unique<checks::ConstCorrectnessCheck>());
 
     try
     {
