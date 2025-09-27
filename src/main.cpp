@@ -3,6 +3,7 @@
 #include "checks/TodoCheck.h"
 #include "checks/NamingConventionCheck.h"
 #include "checks/MagicNumberCheck.h"
+#include "checks/LongFunctionCheck.h"
 
 int main(int argc, char **argv)
 {
@@ -14,6 +15,7 @@ int main(int argc, char **argv)
     analyzer.addCheck(std::make_unique<checks::TodoCheck>());
     analyzer.addCheck(std::make_unique<checks::NamingConventionCheck>());
     analyzer.addCheck(std::make_unique<checks::MagicNumberCheck>());
+    analyzer.addCheck(std::make_unique<checks::LongFunctionCheck>(10)); // set max 10 lines for demo
 
     try
     {

@@ -13,6 +13,7 @@ add_executable(static-analyzer
     src/checks/TodoCheck.cpp
     src/checks/NamingConventionCheck.cpp
     src/checks/MagicNumberCheck.cpp
+    src/checks/LongFunctionCheck.cpp
 )
 
 
