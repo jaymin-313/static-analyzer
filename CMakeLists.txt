@@ -1,15 +1,27 @@
 cmake_minimum_required(VERSION 3.14)
 project(StaticAnalyzer VERSION 0.1 LANGUAGES CXX)
 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Source files
+
 add_executable(static-analyzer
-    src/main.cpp
+src/main.cpp
+src/analyzer/Analyzer.cpp
+src/checks/TodoCheck.cpp
 )
 
+
 target_include_directories(static-analyzer
-    PRIVATE ${CMAKE_SOURCE_DIR}/include
+PRIVATE ${CMAKE_SOURCE_DIR}/include
 )
+
+
+# Optional: enable warnings
+if(MSVC)
+target_compile_options(static-analyzer PRIVATE /W4 /permissive-)
+else()
+target_compile_options(static-analyzer PRIVATE -Wall -Wextra -Wpedantic)
+endif()
