@@ -8,9 +8,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 add_executable(static-analyzer
-src/main.cpp
-src/analyzer/Analyzer.cpp
-src/checks/TodoCheck.cpp
+    src/main.cpp
+    src/analyzer/Analyzer.cpp
+    src/checks/TodoCheck.cpp
+    src/checks/NamingConventionCheck.cpp
+    src/checks/MagicNumberCheck.cpp
 )
 
 

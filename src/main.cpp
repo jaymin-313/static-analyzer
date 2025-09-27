@@ -1,6 +1,8 @@
 #include <iostream>
 #include "analyzer/Analyzer.h"
 #include "checks/TodoCheck.h"
+#include "checks/NamingConventionCheck.h"
+#include "checks/MagicNumberCheck.h"
 
 int main(int argc, char **argv)
 {
@@ -10,6 +12,8 @@ int main(int argc, char **argv)
 
     analyzer::Analyzer analyzer;
     analyzer.addCheck(std::make_unique<checks::TodoCheck>());
+    analyzer.addCheck(std::make_unique<checks::NamingConventionCheck>());
+    analyzer.addCheck(std::make_unique<checks::MagicNumberCheck>());
 
     try
     {
